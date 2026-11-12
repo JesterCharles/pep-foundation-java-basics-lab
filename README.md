@@ -63,8 +63,14 @@ You can do the tasks in any order.
 ### Task 1: average
 
 1. Find the method `average(int a, int b)` and its `TODO`.
-2. Replace `return 0;` with code that returns the average of `a` and `b`, keeping the fraction. Think about what integer division does, and about two very large `int` values.
+2. Replace `return 0;` with code that returns the average of `a` and `b`, keeping the fraction.
 3. While the method is wrong, you see lines such as `Task 1: average(90, 85) ==> expected: <87.5> but was: <0.0>`.
+
+<details><summary>Hint</summary>
+
+Think about what integer division does, and about two very large `int` values.
+
+</details>
 
 ### Task 2: initials
 
@@ -75,14 +81,26 @@ You can do the tasks in any order.
 ### Task 3: even numbers
 
 1. Find the method `isEven(int n)`.
-2. Return whether `n` is even, using the remainder operator `%`. Check your idea against negative numbers too.
+2. Return whether `n` is even, using the remainder operator `%`.
 3. While it is wrong, you see lines such as `Task 3: isEven(7)`.
+
+<details><summary>Hint</summary>
+
+Check your idea against negative numbers too.
+
+</details>
 
 ### Task 4: grade
 
 1. Find the method `grade(int score)`.
-2. Choose the grade with an `if`, `else if` and `else` chain, using the thresholds in the method's comment. Think about which condition must come first.
+2. Choose the grade with an `if`, `else if` and `else` chain, using the thresholds in the method's comment.
 3. The tests try the scores on both sides of every threshold. While a branch is wrong, you see lines such as `Task 4: grade(89) ==> expected: <B> but was: <?>`.
+
+<details><summary>Hint</summary>
+
+Think about which condition must come first.
+
+</details>
 
 ### Task 5: day type
 
@@ -93,8 +111,14 @@ You can do the tasks in any order.
 ### Task 6: countdown
 
 1. Find the method `countdown(int n)`.
-2. Build the text with a `for` loop, from `n` down to 1, with single spaces between the numbers and none at the ends. Check what your loop does when `n` is 0.
+2. Build the text with a `for` loop, from `n` down to 1, with single spaces between the numbers and none at the ends.
 3. While it is wrong, you see lines such as `Task 6: countdown(3) ==> expected: <3 2 1> but was: <>`.
+
+<details><summary>Hint</summary>
+
+Check what your loop does when `n` is 0.
+
+</details>
 
 ### About the test results
 
