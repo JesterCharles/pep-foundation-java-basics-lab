@@ -1,145 +1,150 @@
 # Java Basics lab
 
-## Goal
-
-Finish six small methods in one Java file, `Basics.java`.
+You finish six small methods in one Java file, `Basics.java`.
 Each method practises one idea from the Java Basics module: a primitive type, a String method, an operator, if/else, a switch expression and a for loop.
-You build and test it with the real JDK and Maven on your own computer.
 
-## Prerequisites
+## Quick start
 
-You need JDK 25, Apache Maven 3.9 or later, and a Java IDE or editor (for example IntelliJ IDEA or VS Code).
-If you have not installed them yet, follow **Now install on your own computer** at the end of the topic *Installing Java and the IDE*: it has numbered steps for macOS, Linux and Windows.
-Then check the JDK and Maven in a new terminal:
+The lab needs JDK 25 and Apache Maven 3.9 or later in the terminal. Troubleshooting shows how to check.
 
-```
-java -version
-javac -version
-mvn -v
-```
+1. Open the lab project you were given in VS Code, then open its integrated terminal: **Terminal > New Terminal**.
+2. Go into the project folder. Every command in this lab runs there:
 
-- `java -version` and `javac -version` must report version 25.
-- `mvn -v` must report Apache Maven 3.9 or later, and its `Java version:` line must also say 25.
-  If it shows another Java, see Troubleshooting.
+   ```
+   cd starter
+   ```
 
-This lab works the same on macOS, Linux and Windows.
-On Windows, use PowerShell or Command Prompt; the commands are the same.
-No Docker or other container tool is needed.
+3. Before the first test run, download the lab's libraries once. This needs the internet, and prints nothing when it works:
 
-## Setup (once, needs the internet)
+   ```
+   mvn -q dependency:go-offline
+   ```
 
-Open a terminal in the lab's root folder - the one that holds this README, `starter/` and `tests/` - and change into `starter` with `cd starter`; every command in this lab runs there. Then run:
+4. Run the tests before you change anything:
 
-```
-mvn -q dependency:go-offline
-```
+   ```
+   mvn -q -o test
+   ```
 
-This downloads JUnit and the pinned Maven plugins into your local Maven repository.
-It prints nothing when it succeeds.
-After this step, everything else in the lab runs offline.
-
-## Tasks
-
-Open the lab's root folder in your IDE or editor; it holds one Maven project, `starter/pom.xml`, and if your editor asks, open or import that file as a Maven project, then open `starter/src/main/java/basics/Basics.java`. Whatever your editor shows, the test command below, run in a terminal in `starter`, is the result that counts.
-Each task is one method with a `TODO` comment; its comment says what the method must return.
-Work each result out from the method's parameters, using the idea the task names. The tests call every method with several inputs, including edge cases, and check only the results; they cannot see how you computed them, so the practice comes from writing the general code yourself.
-
-After each task, run the one test command from the `starter` folder:
+   **All 6 tests fail at first. That is expected: the TODOs are not done yet.**
+   The output ends with `Tests run: 6, Failures: 6`, and every failure line starts with its task number, such as `Task 1:`.
+5. Work through the checklist below. After each task, run `mvn -q -o test` again and read the remaining `Task N:` lines.
+6. **You are finished when `mvn -q -o test` prints nothing at all.**
 
 ```
-mvn -q -o test
+OPEN project -> cd starter -> setup (once) -> RUN tests: 6 fail (expected)
+  -> READ the "Task N:" lines -> EDIT the next TODO -> RUN tests again
+  -> repeat for Tasks 1-6 -> STOP when the test run prints nothing
 ```
 
-Every failure line starts with its task number, so you can work through the tasks in any order.
+In words: open the project, run the tests, read which tasks fail, complete one task's TODO, run the tests again, and stop when they print nothing.
+
+## Checklist
+
+All six tasks are in `starter/src/main/java/basics/Basics.java`. Each one is a method with a `TODO` comment.
+
+- [ ] Task 1: `average` (primitive types)
+- [ ] Task 2: `initials` (String methods)
+- [ ] Task 3: `isEven` (the remainder operator)
+- [ ] Task 4: `grade` (if / else if / else)
+- [ ] Task 5: `dayType` (a switch expression)
+- [ ] Task 6: `countdown` (a for loop)
+
+A task is done when no failure line starts with its number.
+Edit only `Basics.java`. The tests in `tests/basics/`, the build file `starter/pom.xml` and `expected/test-summary.txt` stay as they are.
+
+## Task steps
+
+Each method's `TODO` comment says what it must return.
+Work each result out from the method's parameters, using the idea the task names.
+The tests call every method with several inputs, including edge cases, and check only the results. They cannot see how you computed them, so the practice comes from writing the general code yourself.
+You can do the tasks in any order.
 
 ### Task 1: average
 
 1. Find the method `average(int a, int b)` and its `TODO`.
-2. Replace `return 0;` with code that returns the average of `a` and `b`, keeping the fraction. Think about what integer division does, and about two very large `int` values.
-3. Run the tests. While the method is wrong, you see lines such as `Task 1: average(90, 85) ==> expected: <87.5> but was: <0.0>`.
-4. Done when no line starting with `Task 1` appears.
+2. Replace `return 0;` with code that returns the average of `a` and `b`, keeping the fraction.
+3. While the method is wrong, you see lines such as `Task 1: average(90, 85) ==> expected: <87.5> but was: <0.0>`.
+
+<details><summary>Hint</summary>
+
+Think about what integer division does, and about two very large `int` values.
+
+</details>
 
 ### Task 2: initials
 
 1. Find the method `initials(String first, String last)`.
 2. Return the first letter of each name, in upper case, using String methods.
 3. While it is wrong, you see lines such as `Task 2: initials("Grace", "hopper") ==> expected: <GH> but was: <>`.
-4. Done when no line starting with `Task 2` appears.
 
 ### Task 3: even numbers
 
 1. Find the method `isEven(int n)`.
-2. Return whether `n` is even, using the remainder operator `%`. Check your idea against negative numbers too.
+2. Return whether `n` is even, using the remainder operator `%`.
 3. While it is wrong, you see lines such as `Task 3: isEven(7)`.
-4. Done when no line starting with `Task 3` appears.
+
+<details><summary>Hint</summary>
+
+Check your idea against negative numbers too.
+
+</details>
 
 ### Task 4: grade
 
 1. Find the method `grade(int score)`.
-2. Choose the grade with an `if`, `else if` and `else` chain, using the thresholds in the method's comment. Think about which condition must come first.
+2. Choose the grade with an `if`, `else if` and `else` chain, using the thresholds in the method's comment.
 3. The tests try the scores on both sides of every threshold. While a branch is wrong, you see lines such as `Task 4: grade(89) ==> expected: <B> but was: <?>`.
-4. Done when no line starting with `Task 4` appears.
+
+<details><summary>Hint</summary>
+
+Think about which condition must come first.
+
+</details>
 
 ### Task 5: day type
 
 1. Find the method `dayType(int day)`.
 2. Return the result of a switch expression with arrow labels (`->`), covering the values in the method's comment and every other value.
 3. While it is wrong, you see lines such as `Task 5: dayType(8)`.
-4. Done when no line starting with `Task 5` appears.
 
 ### Task 6: countdown
 
 1. Find the method `countdown(int n)`.
-2. Build the text with a `for` loop, from `n` down to 1, with single spaces between the numbers and none at the ends. Check what your loop does when `n` is 0.
+2. Build the text with a `for` loop, from `n` down to 1, with single spaces between the numbers and none at the ends.
 3. While it is wrong, you see lines such as `Task 6: countdown(3) ==> expected: <3 2 1> but was: <>`.
-4. Done when no line starting with `Task 6` appears.
 
-## Test
+<details><summary>Hint</summary>
 
-The one test command, run from the `starter` folder, is:
+Check what your loop does when `n` is 0.
 
-```
-mvn -q -o test
-```
+</details>
 
-- Before you start, all six tests fail, and Maven ends with `Tests run: 6, Failures: 6`.
-- Each test calls its method with several inputs and lists every input that gave a wrong result.
-  A passing run shows that each method returns the right results for those inputs. It does not check which Java constructs your code uses, so compare your code with each task's steps yourself.
-- If your code does not compile, Maven prints `COMPILATION ERROR` with the file, then `[line,column]`, then the compiler's message.
-  Fix that line and run the test again.
+### About the test results
 
-You can also run the program itself, which prints one line per task:
+A passing run shows that each method returns the right results for the inputs the tests try.
+It does not check which Java constructs your code uses, so compare your code with each task's steps yourself.
+
+## Run the program
+
+The program prints one line per task. From `starter`:
 
 ```
 mvn -q -o compile
 java -cp target/classes basics.Basics
 ```
 
-## Expected output
-
-When every task is complete, `mvn -q -o test` prints nothing and exits with status 0.
-`expected/test-summary.txt` shows the full expected result, including the six lines your program prints.
-
-## Offline note
-
-Only the setup step uses the network.
-The test command uses `-o` (offline), so it never downloads anything.
-If it reports that an artifact is missing from the local repository, run the setup step once more while online.
-
-## Cleanup
-
-The lab writes only the `starter/target` folder (compiled classes and test reports). Delete it from the `starter` folder:
-
-- macOS and Linux: `rm -rf target`
-- Windows PowerShell: `Remove-Item -Recurse -Force target`
-
-The JUnit and plugin downloads stay in your local Maven repository (`~/.m2/repository` by default) so later Java labs can reuse them.
-
-`starter/.gitignore` already keeps Maven's `starter/target` folder out of Git. Your editor and operating system may also create local files in the lab's root folder, such as `.idea/`, `.vscode/` or `.DS_Store`; they are not part of the lab, so if `git status` lists any of them, add them to a `.gitignore` file in the lab's root folder instead of committing them.
+`expected/test-summary.txt` shows the finished result, including the six lines this program prints.
 
 ## Troubleshooting
 
+- **`there is no POM in this directory`.** The terminal is not in `starter`. From the lab folder, run `cd starter` and try again.
+- **`COMPILATION ERROR`.** Your code does not compile yet. Maven names the file, then `[line,column]`, then the problem. Fix that line and run the tests again.
 - **`mvn: command not found`, or `'mvn' is not recognized`.** Maven's `bin` folder is not on your `PATH`. Add it, then open a new terminal.
-- **`mvn -v` shows a Java version other than 25.** Maven uses the JDK named by `JAVA_HOME` when it is set, otherwise the `java` on your `PATH`. Set `JAVA_HOME` to your JDK 25 folder, or unset it, then open a new terminal.
-- **`release version 25 not supported`.** Maven is running on an older JDK. Fix it as in the previous item.
-- **`Cannot access central in offline mode`, or a missing artifact.** The setup step has not completed. Run `mvn -q dependency:go-offline` once while online.
+- **`mvn -v` shows a Java version other than 25, or you see `release version 25 not supported`.** Maven uses the JDK named by `JAVA_HOME` when it is set, otherwise the `java` on your `PATH`. Set `JAVA_HOME` to your JDK 25 folder, or unset it, then open a new terminal. Check with `java -version` and `mvn -v`.
+- **`Cannot access central in offline mode`, or a missing artifact.** The setup step has not finished. Run `mvn -q dependency:go-offline` once while online.
+
+## Cleanup (optional)
+
+Maven writes only the `starter/target` folder, and Git already ignores it.
+To delete it, run `rm -rf target` from `starter`. In Windows PowerShell, run `Remove-Item -Recurse -Force target`.
