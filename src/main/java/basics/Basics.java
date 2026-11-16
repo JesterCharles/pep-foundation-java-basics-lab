@@ -5,7 +5,7 @@ package basics;
  * Each method receives its input as parameters and returns its result.
  * The public tests call every method with several inputs, including edge
  * cases, and check the results. Work each result out from the parameters with
- * the idea the task names. The README lists the steps for every task.
+ * the idea the task names. The lab instructions list the steps for every task.
  * main is complete: it prints one line per task.
  */
 public class Basics {
