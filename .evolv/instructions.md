@@ -5,7 +5,7 @@ Each method practises one idea from the Java Basics module: a primitive type, a 
 
 ## Quick start
 
-1. Open `src/main/java/basics/Basics.java`. Each task is a method with a `TODO` comment.
+1. Open `src/main/java/exercise/Basics.java`. Each task is a method with a `TODO` comment.
 2. Select **Run Tests** before you change anything.
 
    **All 6 tests fail at first. That is expected: the TODOs are not done yet.**
@@ -23,7 +23,7 @@ In words: open the file, run the tests, read which tasks fail, complete one task
 
 ## Checklist
 
-All six tasks are in `src/main/java/basics/Basics.java`. Each one is a method with a `TODO` comment.
+All six tasks are in `src/main/java/exercise/Basics.java`. Each one is a method with a `TODO` comment.
 
 - [ ] Task 1: `average` (primitive types)
 - [ ] Task 2: `initials` (String methods)
@@ -33,7 +33,7 @@ All six tasks are in `src/main/java/basics/Basics.java`. Each one is a method wi
 - [ ] Task 6: `countdown` (a for loop)
 
 A task is done when no failure message starts with its number.
-Edit only `Basics.java`. The tests in `src/test/java/basics/` are restored to their original state before your work is graded, so changes to them do not count. Leave the build file `pom.xml` as it is.
+Edit only `Basics.java`. The tests in `src/test/java/exercise/` are restored to their original state before your work is graded, so changes to them do not count. Leave the build file `pom.xml` as it is.
 
 ## Task steps
 
@@ -113,7 +113,7 @@ The program prints one line per task. In a terminal, from the project folder:
 
 ```
 mvn -q compile
-java -cp target/classes basics.Basics
+java -cp target/classes exercise.Basics
 ```
 
 `expected/test-summary.txt` shows the finished result, including the six lines this program prints.

@@ -1,4 +1,4 @@
-package basics;
+package exercise;
 
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -12,7 +12,7 @@ import org.junit.jupiter.api.TestMethodOrder;
  * inputs, including edge cases, and checks only the results it returns.
  */
 @TestMethodOrder(MethodOrderer.MethodName.class)
-class BasicsTest {
+class VisibleTests {
 
     @Test
     void task1Average() {

@@ -1,4 +1,4 @@
-package basics;
+package exercise;
 
 /**
  * Java Basics lab. Complete the six methods marked TODO.
