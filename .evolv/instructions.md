@@ -8,15 +8,16 @@ Each method practises one idea from the Java Basics module: a primitive type, a 
 1. Open `src/main/java/exercise/Basics.java`. Each task is a method with a `TODO` comment.
 2. Select **Run Tests** before you change anything.
 
-   **All 6 tests fail at first. That is expected: the TODOs are not done yet.**
+   **All 6 visible tests fail at first. That is expected: the TODOs are not done yet.**
    Every failure message starts with its task number, such as `Task 1:`.
 3. Work through the checklist below. After each task, select **Run Tests** again and read the remaining `Task N:` messages.
-4. **You are finished when all 6 tests pass.** Then select **Submit**.
+4. **You are finished when all 6 visible tests pass.** Then select **Submit**.
+   Submitting also runs held-out tests you can't see.
 
 ```
 OPEN Basics.java -> RUN TESTS: 6 fail (expected)
   -> READ the "Task N:" messages -> EDIT the next TODO -> RUN TESTS again
-  -> repeat for Tasks 1-6 -> SUBMIT when all 6 tests pass
+  -> repeat for Tasks 1-6 -> SUBMIT when all 6 visible tests pass
 ```
 
 In words: open the file, run the tests, read which tasks fail, complete one task's TODO, run the tests again, and submit when they all pass.
@@ -39,7 +40,8 @@ Edit only `Basics.java`. The tests in `src/test/java/exercise/` are restored to 
 
 Each method's `TODO` comment says what it must return.
 Work each result out from the method's parameters, using the idea the task names.
-The tests call every method with several inputs, including edge cases, and check only the results. They cannot see how you computed them, so the practice comes from writing the general code yourself.
+Run Tests runs the visible tests. Submit also runs held-out tests you can't see: they try more inputs, including edge cases, so make each method correct for every input its comment describes, not only the ones the visible tests try.
+The tests check only the results. They cannot see how you computed them, so the practice comes from writing the general code yourself.
 You can do the tasks in any order.
 
 ### Task 1: average
@@ -76,7 +78,7 @@ Check your idea against negative numbers too.
 
 1. Find the method `grade(int score)`.
 2. Choose the grade with an `if`, `else if` and `else` chain, using the thresholds in the method's comment.
-3. The tests try the scores on both sides of every threshold. While a branch is wrong, you see messages such as `Task 4: grade(89) ==> expected: <B> but was: <?>`.
+3. The held-out tests try the scores on both sides of every threshold. While a branch is wrong, you see messages such as `Task 4: grade(89) ==> expected: <B> but was: <?>`.
 
 <details><summary>Hint</summary>
 
@@ -116,7 +118,16 @@ mvn -q compile
 java -cp target/classes exercise.Basics
 ```
 
-`expected/test-summary.txt` shows the finished result, including the six lines this program prints.
+When every task is done, it prints:
+
+```
+Average: 87.5
+Initials: AL
+Even: true
+Grade: B
+Day: weekend
+Countdown: 5 4 3 2 1
+```
 
 ## Troubleshooting
 
